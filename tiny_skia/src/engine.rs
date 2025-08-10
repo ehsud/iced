@@ -424,7 +424,7 @@ impl Engine {
                 shaping,
                 clip_bounds: local_clip_bounds, // TODO
             } => {
-                let physical_bounds = *text_bounds * transformation;
+                let physical_bounds = *local_clip_bounds * transformation;
 
                 if !clip_bounds.intersects(&physical_bounds) {
                     return;
